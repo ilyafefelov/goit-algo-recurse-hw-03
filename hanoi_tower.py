@@ -13,6 +13,18 @@ steps = []
 
 
 def hanoi(n, source, auxiliary, target):
+    """
+    Solve the Tower of Hanoi puzzle recursively.
+
+    Parameters:
+    - n (int): The number of disks to be moved.
+    - source (str): The name of the source peg.
+    - auxiliary (str): The name of the auxiliary peg.
+    - target (str): The name of the target peg.
+
+    Returns:
+    None
+    """
     if n > 0:
         hanoi(n - 1, source, target, auxiliary)
         steps.append((source, target))
@@ -29,6 +41,16 @@ ax.set_ylim(0, num_disks + 1)
 
 # Функція для оновлення графіки
 def update(num):
+    """
+    Update the visualization of the Hanoi Tower puzzle.
+
+    Parameters:
+    - num (int): The current step number.
+
+    Returns:
+    None
+    """
+
     ax.clear()
     ax.set_xlim(-1, 3)
     ax.set_ylim(0, num_disks + 1)
